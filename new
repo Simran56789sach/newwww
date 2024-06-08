@@ -1,9 +1,22 @@
-I am working on asp.net mvc project
-
-I need code for a page that says welcome to Car Info management sytem and have navbar with 3 option "Home" that redirects to same page, "Admin Login" that redirects to account controller index which is alraedy made and "customer" that redirects to alreday made customer controller index
-after admin successfully logs in it takes to adminHome page which we have to cereate that has a menu for all the four options Car Info, Car Transmission Types, Car Manufacturer Types and car Types
-and each one of it takes to respective controller
-
-and i have various controllers and views for Car Info, Car Transmission Types, Car Manufacturer Types and car Types
-
-I need an mvc code for a landing page which will be coming after successful login 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Car Info Management System</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Admin Login", "Index", "Account")</li>
+                <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
