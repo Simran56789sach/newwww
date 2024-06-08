@@ -1,29 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>@ViewBag.Title - Car Info Management System</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Car Info Management System</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Admin Login", "Index", "Account", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Customer", "Index", "Customer", new { @class = "nav-link" })</li>
-                </ul>
+@{
+    ViewBag.Title = "Admin Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="my-4">Admin Home</h2>
+
+<div class="container">
+    <div class="accordion" id="adminMenu">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Menu
+                    </button>
+                </h2>
             </div>
-        </nav>
-    </header>
-    <div class="container mt-3">
-        @RenderBody()
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#adminMenu">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            @Html.ActionLink("Car Info", "Index", "CarInfo")
+                        </li>
+                        <li class="list-group-item">
+                            @Html.ActionLink("Car Transmission Types", "Index", "CarTransmissionTypes")
+                        </li>
+                        <li class="list-group-item">
+                            @Html.ActionLink("Car Manufacturer Types", "Index", "CarManufacturerTypes")
+                        </li>
+                        <li class="list-group-item">
+                            @Html.ActionLink("Car Types", "Index", "CarTypes")
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
