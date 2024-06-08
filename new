@@ -4,36 +4,18 @@
 }
 
 <h2 class="my-4">Admin Home</h2>
-
-<div class="container">
-    <div class="accordion" id="adminMenu">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Menu
-                    </button>
-                </h2>
-            </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#adminMenu">
-                <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            @Html.ActionLink("Car Info", "Index", "CarInfo")
-                        </li>
-                        <li class="list-group-item">
-                            @Html.ActionLink("Car Transmission Types", "Index", "CarTransmissionTypes")
-                        </li>
-                        <li class="list-group-item">
-                            @Html.ActionLink("Car Manufacturer Types", "Index", "CarManufacturerTypes")
-                        </li>
-                        <li class="list-group-item">
-                            @Html.ActionLink("Car Types", "Index", "CarTypes")
-                        </li>
-                    </ul>
-                </div>
+<div class="d-flex">
+    <nav id="sidebarMenu" class="collapse d-lg-block bg-light sidebar">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush">
+                @Html.ActionLink("Car Info", "Index", "CarInfo", new { @class = "list-group-item list-group-item-action p-3" })
+                @Html.ActionLink("Car Transmission Types", "Index", "CarTransmissionTypes", new { @class = "list-group-item list-group-item-action p-3" })
+                @Html.ActionLink("Car Manufacturer Types", "Index", "CarManufacturerTypes", new { @class = "list-group-item list-group-item-action p-3" })
+                @Html.ActionLink("Car Types", "Index", "CarTypes", new { @class = "list-group-item list-group-item-action p-3" })
             </div>
         </div>
+    </nav>
+    <div class="flex-grow-1">
+        <!-- Main content goes here -->
     </div>
 </div>
